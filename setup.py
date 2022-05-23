@@ -2,7 +2,7 @@
 """
 Created on Sat May 21 16:18:45 2022
 
-@author: Juan Camilo González Vélez
+@author: 50315
 """
 import setuptools
 

@@ -21,17 +21,13 @@ class OptimizationProblem:
         self.tolerance = tolerance
         
     def evaluate_Jacobian(self, x_1, x_2):
-        """Evaluate the Jacobian of the function.
+        """Evaluate the Jacobian of the function. Used in the inherited class
 
         Keyword arguments:
         x_1 -- x1 value in which the Jacobian is evaluated
         x_2 -- x2 value in which the Jacobian is evaluated
         """
-        Jacobian = np.array([[4*(mt.pow(x_1, 2) + x_2 - 3)*x_1 
-                            + 2*(x_1 + mt.pow(x_2, 2) - 9)],
-                            [2*(mt.pow(x_1, 2) + x_2 - 3) 
-                            + 4*(x_1 + mt.pow(x_2, 2) - 9)*x_2]])
-        return Jacobian
+        pass
        
     def solve(self, x_1, x_2):
         """Optimize the function with the gradient descent algorithm.
@@ -101,5 +97,20 @@ class GDOptProblem(OptimizationProblem):
         f2 = mt.pow((x_1 + mt.pow(x_2, 2) - 9), 2)
         Function = f1 + f2
         return Function
+    
+    def evaluate_Jacobian(self, x_1, x_2):
+        """Evaluate the Jacobian of the function.
 
+        Keyword arguments:
+        x_1 -- x1 value in which the Jacobian is evaluated
+        x_2 -- x2 value in which the Jacobian is evaluated
+        """
+        h = 0.001    # Differentiation step
+        Jacobian = np.array([[(self.evaluate_Func(x_1 + h, x_2) 
+                             - self.evaluate_Func(x_1 - h, x_2))/(2*h)],
+                             [(self.evaluate_Func(x_1, x_2 + h) 
+                             - self.evaluate_Func(x_1, x_2 - h))/(2*h)]])
+        return Jacobian
 
+default_problem = GDOptProblem()
+default_problem.solve(0, 0)
