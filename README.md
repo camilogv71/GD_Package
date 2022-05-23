@@ -10,9 +10,9 @@ From the folder "GD_Package" run the command `python setup.py install`
 
 If no parameters are given, the default values will be assumed:
 
-* Maximum iterations as a stopping criteria: 10
+* Maximum iterations as a stopping criteria: 800
 * Tolerance as a stopping criteria: 0.0001
-* Learning Rate: 0.1
+* Learning Rate: 0.01
 
 # Function arguments
 
