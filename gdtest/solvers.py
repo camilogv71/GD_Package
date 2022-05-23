@@ -111,6 +111,3 @@ class GDOptProblem(OptimizationProblem):
                              [(self.evaluate_Func(x_1, x_2 + h) 
                              - self.evaluate_Func(x_1, x_2 - h))/(2*h)]])
         return Jacobian
-
-default_problem = GDOptProblem()
-default_problem.solve(0, 0)
