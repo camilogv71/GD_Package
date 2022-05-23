@@ -9,6 +9,8 @@ import setuptools
 with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
+requirements = ["numpy>=1.18.5"]
+    
 setuptools.setup(
     name="GD_Package",
     version="0.0.1",
