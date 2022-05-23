@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat May 21 16:18:45 2022
+Created on Sun May 22 19:18:45 2022
 
-@author: 50315
+@author: Juan Camilo González Vélez
 """
 import setuptools
 
