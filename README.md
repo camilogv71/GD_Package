@@ -3,7 +3,7 @@ This is a package for the gradient descent algorithm without the use of a third-
 
 # Installation
 
-Run the command 'python setup.py install' on the main folder
+Run the command ´python setup.py install´ on the main folder
 
 # Initial Parameters
 
